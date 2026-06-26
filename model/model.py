@@ -27,9 +27,7 @@ class Model:
     def getPathV2(self, v0):
         self._bestPath = []
         self._bestObjVal = 0
-
         parziale = [v0]
-
         listaVicini = self.getVicini(parziale[-1])
         parziale.append(listaVicini[0][0])
         self._ricorsioneV2(parziale)

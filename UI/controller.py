@@ -77,7 +77,6 @@ class Controller:
 
         self._view.update_page()
 
-
     def readDDTeams(self, e):
         if e.control.data is None:
             self._choiceTeam = None
