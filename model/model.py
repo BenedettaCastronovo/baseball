@@ -93,6 +93,13 @@ class Model:
         #         if u!=v:
         #             self._grafo.add_edge(u, v)
 
+        mapSalary = DAO.getSalariesTeam(year, self._idMapTeams)
+        for a1, a2 in itertools.combinations(self._teams, 2):
+            sal1 = mapSalary[a1]
+            sal2 = mapSalary[a2]
+            peso = sal1 + sal2
+            self._grafo.add_edge(a1, a2, weight = peso)
+
         myedges = list(itertools.combinations(self._teams, 2))
         self._grafo.add_edges_from(myedges)
         mapSalary = DAO.getSalariesTeam(year, self._idMapTeams)
